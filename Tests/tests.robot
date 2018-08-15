@@ -10,8 +10,7 @@ ${email}    etunimi.sukunimi@cinia.fi
 ${city}   Helsinki
 ${maps}   https://www.google.com/maps/
 ${title_end}    - Google Maps
-${altered}    -Tieto
-${altered4}   -unknown2
+${vare}   tila
 
 *** Keywords ***
 Close Kaka Notification
