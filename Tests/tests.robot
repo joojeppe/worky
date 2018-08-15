@@ -11,7 +11,7 @@ ${city}   Helsinki
 ${maps}   https://www.google.com/maps/
 ${title_end}    - Google Maps
 ${altered}    -Tieto
-${altered3}   -unknown2
+${altered4}   -unknown2
 
 *** Keywords ***
 Close Kaka Notification
