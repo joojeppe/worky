@@ -19,7 +19,6 @@ Get Coco Helsinki Office From Maps
   Open Google Maps    ${maps}
   Searching Street Address    ${city_o}
   ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
-  Clear Search Field
   Verifying Office Address    ${citymaps}
 
 Get Coco Tampere Office From Maps
@@ -34,7 +33,6 @@ Get Coco Tampere Office From Maps
     ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
     Sleep    3s
     #Wait Until Page Contains    Niulakatu 3
-    Clear Search Field
     Page Should Contain    Naulakatu 3
     #Element Text Should Be    //div[@id='pane']//h1[contains(text(), 'Naulakatu 3')]    Naulakatu 3
     #Verifying Office Address    ${citymaps}
@@ -51,7 +49,6 @@ Get Coco Jyvaskyla Office From Maps
     ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
     Sleep    3s
     #Wait Until Page Contains    Niulakatu 3
-    Clear Search Field
     Page Should Contain    Ohjelmakaari 10
     #Element Text Should Be    //div[@id='pane']//h1[contains(text(), 'Naulakatu 3')]    Naulakatu 3
     #Verifying Office Address    ${citymaps}
@@ -68,7 +65,6 @@ Get Coco Vantaa Office From Maps
     ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
     Sleep    3s
     #Wait Until Page Contains    Niulakatu 3
-    Clear Search Field
     Page Should Contain    Lentoasemantie 1
     #Element Text Should Be    //div[@id='pane']//h1[contains(text(), 'Naulakatu 3')]    Naulakatu 3
     #Verifying Office Address    ${citymaps}
@@ -85,7 +81,6 @@ Get Coco Riihimaki Office From Maps
     ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
     Sleep    3s
     #Wait Until Page Contains    Niulakatu 3
-    Clear Search Field
     #Page Should Contain    Pohjoinen Asemakatu 5
     #Element Text Should Be    //div[@id='pane']//h1[contains(text(), 'Naulakatu 3')]    Naulakatu 3
     #Verifying Office Address    ${citymaps}
