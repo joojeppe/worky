@@ -18,7 +18,7 @@ ${riihimaki}    //div[@class='text-center mt-3']//span[contains(text(),'Riihimä
 ${riihimaki_s}    //div[@class='text-white js-single-location riihimaki']//span[@class='text-white mr-0 mr-md-4 mobile-width pt-3 pt-lg-0']
 ${maps}   https://www.google.com/maps/
 ${title_end}     - Google Maps
-
+${Browser}    Chrome
 *** Keywords ***
 Close Kaka Notification
   Click Button    //button[@class='btn']
