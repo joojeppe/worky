@@ -1,7 +1,7 @@
 *** Settings ***
 Resource  ../Resources/common.robot
 
-Test Setup    Open Browser    ${url}    chrome
+Test Setup    Open Browser    ${url}    ${Browser}
 Test Teardown   Close Browser
 
 *** Test Cases ***
