@@ -1,57 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generated="20180813 21:54:44.805" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
-<suite source="C:\Development\Robot\BrianLamb\explore-libraries\Inputs\SQL\Sini\Tests\tests.robot" id="s1" name="Tests">
-<test id="s1-t1" name="Get Cinia Helsinki Office From Maps">
+<robot generated="20180816 12:59:07.978" generator="Robot 3.0.2 (Python 2.7.14 on win32)">
+<suite source="C:\Development\Robot\worky\Tests\tests.robot" id="s1" name="Tests">
+<test id="s1-t1" name="Get Cinia Riihimaki Office From Maps">
 <kw type="setup" name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
 <arguments>
 <arg>${url}</arg>
 <arg>chrome</arg>
 </arguments>
-<msg timestamp="20180813 21:54:44.983" level="INFO">Opening browser 'chrome' to base url 'http://www.cinia.fi'.</msg>
-<status status="PASS" endtime="20180813 21:54:52.551" starttime="20180813 21:54:44.982"></status>
+<msg timestamp="20180816 12:59:08.236" level="INFO">Opening browser 'chrome' to base url 'http://www.cinia.fi'.</msg>
+<status status="PASS" endtime="20180816 12:59:16.308" starttime="20180816 12:59:08.236"></status>
 </kw>
-<kw name="Close Kaka Notification">
+<kw name="Close Kaka Notification" library="common">
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>//button[@class='btn']</arg>
 </arguments>
-<msg timestamp="20180813 21:54:52.552" level="INFO">Clicking button '//button[@class='btn']'.</msg>
-<status status="PASS" endtime="20180813 21:54:52.657" starttime="20180813 21:54:52.552"></status>
+<msg timestamp="20180816 12:59:16.309" level="INFO">Clicking button '//button[@class='btn']'.</msg>
+<status status="PASS" endtime="20180816 12:59:16.445" starttime="20180816 12:59:16.309"></status>
 </kw>
-<status status="PASS" endtime="20180813 21:54:52.658" starttime="20180813 21:54:52.551"></status>
+<status status="PASS" endtime="20180816 12:59:16.445" starttime="20180816 12:59:16.308"></status>
 </kw>
-<kw name="Activate City">
+<kw name="Activate City" library="common">
+<arguments>
+<arg>${riihimaki}</arg>
+</arguments>
+<kw name="Get WebElement" library="SeleniumLibrary">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>${city}</arg>
+</arguments>
+<assign>
+<var>${m_city}</var>
+</assign>
+<msg timestamp="20180816 12:59:16.484" level="INFO">${m_city} = &lt;selenium.webdriver.remote.webelement.WebElement (session="9f9e927b408bdd2960f1225a1d4b4a0b", element="0.5655410720827596-2")&gt;</msg>
+<status status="PASS" endtime="20180816 12:59:16.484" starttime="20180816 12:59:16.446"></status>
+</kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
-<arg>//div[@class='text-center mt-3']//span[contains(text(),${city})]</arg>
+<arg>${city}</arg>
 </arguments>
-<msg timestamp="20180813 21:54:52.659" level="INFO">Clicking element '//div[@class='text-center mt-3']//span[contains(text(),Tampere)]'.</msg>
-<status status="PASS" endtime="20180813 21:54:52.739" starttime="20180813 21:54:52.658"></status>
+<msg timestamp="20180816 12:59:16.485" level="INFO">Clicking element '//div[@class='text-center mt-3']//span[contains(text(),'Riihimäki')]'.</msg>
+<status status="PASS" endtime="20180816 12:59:16.556" starttime="20180816 12:59:16.485"></status>
 </kw>
-<status status="PASS" endtime="20180813 21:54:52.739" starttime="20180813 21:54:52.658"></status>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${m_city}</arg>
+</arguments>
+<msg timestamp="20180816 12:59:16.556" level="INFO">&lt;selenium.webdriver.remote.webelement.WebElement (session="9f9e927b408bdd2960f1225a1d4b4a0b", element="0.5655410720827596-2")&gt;</msg>
+<status status="PASS" endtime="20180816 12:59:16.556" starttime="20180816 12:59:16.556"></status>
 </kw>
-<kw name="Get City String">
+<status status="PASS" endtime="20180816 12:59:16.557" starttime="20180816 12:59:16.445"></status>
+</kw>
+<kw name="Get City String" library="common">
+<arguments>
+<arg>${riihimaki_s}</arg>
+</arguments>
 <assign>
 <var>${n_edited}</var>
 </assign>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of element identified by ``locator``.</doc>
 <arguments>
-<arg>//div[@class='text-center mt-3 js-location-holder mt-5']</arg>
+<arg>${office_a}</arg>
 </arguments>
 <assign>
 <var>${n_edited}</var>
 </assign>
-<msg timestamp="20180813 21:54:52.786" level="INFO">${n_edited} = Ilmalantori 1, 00240 Helsinki etunimi.sukunimi@cinia.fi</msg>
-<status status="PASS" endtime="20180813 21:54:52.787" starttime="20180813 21:54:52.740"></status>
+<msg timestamp="20180816 12:59:16.613" level="INFO">${n_edited} = Pohjoinen Asemakatu 5, 11130 Riihimäki</msg>
+<status status="PASS" endtime="20180816 12:59:16.613" starttime="20180816 12:59:16.557"></status>
 </kw>
-<msg timestamp="20180813 21:54:52.787" level="INFO">${n_edited} = Ilmalantori 1, 00240 Helsinki etunimi.sukunimi@cinia.fi</msg>
-<status status="PASS" endtime="20180813 21:54:52.787" starttime="20180813 21:54:52.739"></status>
+<msg timestamp="20180816 12:59:16.614" level="INFO">${n_edited} = Pohjoinen Asemakatu 5, 11130 Riihimäki</msg>
+<status status="PASS" endtime="20180816 12:59:16.614" starttime="20180816 12:59:16.557"></status>
 </kw>
-<kw name="Removing Email From City String">
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${n_edited}</arg>
+</arguments>
+<msg timestamp="20180816 12:59:16.614" level="INFO">Pohjoinen Asemakatu 5, 11130 Riihimäki</msg>
+<status status="PASS" endtime="20180816 12:59:16.615" starttime="20180816 12:59:16.614"></status>
+</kw>
+<kw name="Removing Email From City String" library="common">
 <arguments>
 <arg>${n_edited}</arg>
 <arg>${email}</arg>
@@ -68,13 +101,13 @@
 <assign>
 <var>${estring}</var>
 </assign>
-<msg timestamp="20180813 21:54:52.788" level="INFO">${estring} = Ilmalantori 1, 00240 Helsinki </msg>
-<status status="PASS" endtime="20180813 21:54:52.788" starttime="20180813 21:54:52.788"></status>
+<msg timestamp="20180816 12:59:16.616" level="INFO">${estring} = Pohjoinen Asemakatu 5, 11130 Riihimäki</msg>
+<status status="PASS" endtime="20180816 12:59:16.616" starttime="20180816 12:59:16.615"></status>
 </kw>
-<msg timestamp="20180813 21:54:52.789" level="INFO">${estring} = Ilmalantori 1, 00240 Helsinki </msg>
-<status status="PASS" endtime="20180813 21:54:52.789" starttime="20180813 21:54:52.787"></status>
+<msg timestamp="20180816 12:59:16.616" level="INFO">${estring} = Pohjoinen Asemakatu 5, 11130 Riihimäki</msg>
+<status status="PASS" endtime="20180816 12:59:16.616" starttime="20180816 12:59:16.615"></status>
 </kw>
-<kw name="Modifyid City String To Variable">
+<kw name="Modifyid City String To Variable" library="common">
 <arguments>
 <arg>${estring}</arg>
 </arguments>
@@ -87,13 +120,13 @@
 <arg>${city_o}</arg>
 <arg>${estring}</arg>
 </arguments>
-<msg timestamp="20180813 21:54:52.791" level="INFO">${city_o} = Ilmalantori 1, 00240 Helsinki </msg>
-<status status="PASS" endtime="20180813 21:54:52.791" starttime="20180813 21:54:52.790"></status>
+<msg timestamp="20180816 12:59:16.618" level="INFO">${city_o} = Pohjoinen Asemakatu 5, 11130 Riihimäki</msg>
+<status status="PASS" endtime="20180816 12:59:16.619" starttime="20180816 12:59:16.617"></status>
 </kw>
-<msg timestamp="20180813 21:54:52.791" level="INFO">${city_o} = Ilmalantori 1, 00240 Helsinki </msg>
-<status status="PASS" endtime="20180813 21:54:52.791" starttime="20180813 21:54:52.789"></status>
+<msg timestamp="20180816 12:59:16.619" level="INFO">${city_o} = Pohjoinen Asemakatu 5, 11130 Riihimäki</msg>
+<status status="PASS" endtime="20180816 12:59:16.619" starttime="20180816 12:59:16.617"></status>
 </kw>
-<kw name="Open Google Maps">
+<kw name="Open Google Maps" library="common">
 <arguments>
 <arg>${maps}</arg>
 </arguments>
@@ -102,28 +135,28 @@
 <arguments>
 <arg>${maps}</arg>
 </arguments>
-<msg timestamp="20180813 21:54:52.792" level="INFO">Opening url 'https://www.google.com/maps/'</msg>
-<status status="PASS" endtime="20180813 21:54:53.695" starttime="20180813 21:54:52.792"></status>
+<msg timestamp="20180816 12:59:16.620" level="INFO">Opening url 'https://www.google.com/maps/'</msg>
+<status status="PASS" endtime="20180816 12:59:18.682" starttime="20180816 12:59:16.619"></status>
 </kw>
 <kw name="Title Should Be" library="SeleniumLibrary">
 <doc>Verifies that current page title equals ``title``.</doc>
 <arguments>
 <arg>Google Maps</arg>
 </arguments>
-<msg timestamp="20180813 21:54:53.702" level="INFO">Page title is 'Google Maps'.</msg>
-<status status="PASS" endtime="20180813 21:54:53.702" starttime="20180813 21:54:53.696"></status>
+<msg timestamp="20180816 12:59:18.956" level="INFO">Page title is 'Google Maps'.</msg>
+<status status="PASS" endtime="20180816 12:59:18.957" starttime="20180816 12:59:18.683"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>3s</arg>
 </arguments>
-<msg timestamp="20180813 21:54:56.704" level="INFO">Slept 3 seconds</msg>
-<status status="PASS" endtime="20180813 21:54:56.704" starttime="20180813 21:54:53.703"></status>
+<msg timestamp="20180816 12:59:21.957" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180816 12:59:21.957" starttime="20180816 12:59:18.957"></status>
 </kw>
-<status status="PASS" endtime="20180813 21:54:56.704" starttime="20180813 21:54:52.791"></status>
+<status status="PASS" endtime="20180816 12:59:21.957" starttime="20180816 12:59:16.619"></status>
 </kw>
-<kw name="Searching Street Address">
+<kw name="Searching Street Address" library="common">
 <arguments>
 <arg>${city_o}</arg>
 </arguments>
@@ -133,20 +166,20 @@
 <arg>//input[@id='searchboxinput']</arg>
 <arg>${city_o}</arg>
 </arguments>
-<msg timestamp="20180813 21:54:56.706" level="INFO">Typing text 'Ilmalantori 1, 00240 Helsinki ' into text field '//input[@id='searchboxinput']'.</msg>
-<status status="PASS" endtime="20180813 21:54:57.770" starttime="20180813 21:54:56.706"></status>
+<msg timestamp="20180816 12:59:21.959" level="INFO">Typing text 'Pohjoinen Asemakatu 5, 11130 Riihimäki' into text field '//input[@id='searchboxinput']'.</msg>
+<status status="PASS" endtime="20180816 12:59:22.483" starttime="20180816 12:59:21.959"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>//button[@id='searchbox-searchbutton']</arg>
 </arguments>
-<msg timestamp="20180813 21:54:57.771" level="INFO">Clicking button '//button[@id='searchbox-searchbutton']'.</msg>
-<status status="PASS" endtime="20180813 21:54:57.901" starttime="20180813 21:54:57.771"></status>
+<msg timestamp="20180816 12:59:22.483" level="INFO">Clicking button '//button[@id='searchbox-searchbutton']'.</msg>
+<status status="PASS" endtime="20180816 12:59:22.622" starttime="20180816 12:59:22.483"></status>
 </kw>
-<status status="PASS" endtime="20180813 21:54:57.901" starttime="20180813 21:54:56.705"></status>
+<status status="PASS" endtime="20180816 12:59:22.622" starttime="20180816 12:59:21.958"></status>
 </kw>
-<kw name="Catenate City And Maps">
+<kw name="Catenate City And Maps" library="common">
 <arguments>
 <arg>${city_o}</arg>
 <arg>${title_end}</arg>
@@ -164,54 +197,45 @@
 <assign>
 <var>${citymaps}</var>
 </assign>
-<msg timestamp="20180813 21:54:57.902" level="INFO">${citymaps} = Ilmalantori 1, 00240 Helsinki - Google Maps</msg>
-<status status="PASS" endtime="20180813 21:54:57.902" starttime="20180813 21:54:57.902"></status>
+<msg timestamp="20180816 12:59:22.624" level="INFO">${citymaps} = Pohjoinen Asemakatu 5, 11130 Riihimäki- Google Maps</msg>
+<status status="PASS" endtime="20180816 12:59:22.624" starttime="20180816 12:59:22.623"></status>
 </kw>
-<msg timestamp="20180813 21:54:57.902" level="INFO">${citymaps} = Ilmalantori 1, 00240 Helsinki - Google Maps</msg>
-<status status="PASS" endtime="20180813 21:54:57.903" starttime="20180813 21:54:57.901"></status>
+<msg timestamp="20180816 12:59:22.624" level="INFO">${citymaps} = Pohjoinen Asemakatu 5, 11130 Riihimäki- Google Maps</msg>
+<status status="PASS" endtime="20180816 12:59:22.624" starttime="20180816 12:59:22.623"></status>
 </kw>
-<kw name="Verifying Office Address">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
 <arguments>
-<arg>${citymaps}</arg>
+<arg>3s</arg>
 </arguments>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on current page.</doc>
+<msg timestamp="20180816 12:59:25.626" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" endtime="20180816 12:59:25.626" starttime="20180816 12:59:22.625"></status>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<doc>Verifies that current page contains ``text``.</doc>
 <arguments>
-<arg>Directions</arg>
+<arg>Pohjoinen Asemakatu 5</arg>
 </arguments>
-<status status="PASS" endtime="20180813 21:54:57.935" starttime="20180813 21:54:57.904"></status>
-</kw>
-<kw name="Title Should Be" library="SeleniumLibrary">
-<doc>Verifies that current page title equals ``title``.</doc>
-<arguments>
-<arg>${title}</arg>
-</arguments>
-<msg timestamp="20180813 21:54:57.940" level="INFO">Page title is 'Ilmalantori 1, 00240 Helsinki - Google Maps'.</msg>
-<status status="PASS" endtime="20180813 21:54:57.940" starttime="20180813 21:54:57.935"></status>
-</kw>
-<status status="PASS" endtime="20180813 21:54:57.940" starttime="20180813 21:54:57.903"></status>
-</kw>
-<kw name="Get Cinia Helsinki Office From Maps">
-<msg timestamp="20180813 21:54:57.947" level="FAIL">No keyword with name 'Get Cinia Helsinki Office From Maps' found.</msg>
-<status status="FAIL" endtime="20180813 21:54:57.947" starttime="20180813 21:54:57.947"></status>
+<msg timestamp="20180816 12:59:25.674" level="INFO">Current page contains text 'Pohjoinen Asemakatu 5'.</msg>
+<status status="PASS" endtime="20180816 12:59:25.674" starttime="20180816 12:59:25.627"></status>
 </kw>
 <kw type="teardown" name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20180813 21:55:00.201" starttime="20180813 21:54:57.948"></status>
+<status status="PASS" endtime="20180816 12:59:28.203" starttime="20180816 12:59:25.675"></status>
 </kw>
-<status status="FAIL" endtime="20180813 21:55:00.202" critical="yes" starttime="20180813 21:54:44.981">No keyword with name 'Get Cinia Helsinki Office From Maps' found.</status>
+<status status="PASS" endtime="20180816 12:59:28.204" critical="yes" starttime="20180816 12:59:08.235"></status>
 </test>
-<status status="FAIL" endtime="20180813 21:55:00.205" starttime="20180813 21:54:44.808"></status>
+<status status="PASS" endtime="20180816 12:59:28.206" starttime="20180816 12:59:07.981"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="1" pass="0">Critical Tests</stat>
-<stat fail="1" pass="0">All Tests</stat>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat fail="1" id="s1" name="Tests" pass="0">Tests</stat>
+<stat fail="0" id="s1" name="Tests" pass="1">Tests</stat>
 </suite>
 </statistics>
 <errors>
