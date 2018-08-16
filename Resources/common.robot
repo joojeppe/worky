@@ -55,6 +55,9 @@ Searching Street Address
   Input Text    //input[@id='searchboxinput']    ${city_o}
   Click Button    //button[@id='searchbox-searchbutton']
 
+Clear Search Field
+  Clear Element Text   //input[@id='searchboxinput']
+
 Verifying Office Address
   [Arguments]   ${title}
   Wait Until Page Contains    Directions

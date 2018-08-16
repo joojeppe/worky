@@ -5,12 +5,12 @@ Test Setup    Open Browser    ${url}    chrome
 Test Teardown   Close Browser
 
 *** Test Cases ***
-Open Cinia web page and verify view
+Open Coco web page and verify view
   Maximize Browser Window
   Title Should Be    Etusivu - Cinia
   Element Should Be Visible    //div[@class='col-2 float-left']//a//img
 
-Get Cinia Helsinki Office From Maps
+Get Coco Helsinki Office From Maps
   Close Kaka Notification
   Activate City    ${helsinki}
   ${n_edited}    Get City String    ${helsinki_s}
@@ -19,9 +19,10 @@ Get Cinia Helsinki Office From Maps
   Open Google Maps    ${maps}
   Searching Street Address    ${city_o}
   ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
+  Clear Search Field
   Verifying Office Address    ${citymaps}
 
-Get Cinia Tampere Office From Maps
+Get Coco Tampere Office From Maps
     Close Kaka Notification
     Activate City    ${tampere}
     ${n_edited}    Get City String    ${tampere_s}
@@ -33,11 +34,12 @@ Get Cinia Tampere Office From Maps
     ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
     Sleep    3s
     #Wait Until Page Contains    Niulakatu 3
+    Clear Search Field
     Page Should Contain    Naulakatu 3
     #Element Text Should Be    //div[@id='pane']//h1[contains(text(), 'Naulakatu 3')]    Naulakatu 3
     #Verifying Office Address    ${citymaps}
 
-Get Cinia Jyvaskyla Office From Maps
+Get Coco Jyvaskyla Office From Maps
     Close Kaka Notification
     Activate City    ${jyvaskyla}
     ${n_edited}    Get City String    ${jyvaskyla_s}
@@ -49,11 +51,12 @@ Get Cinia Jyvaskyla Office From Maps
     ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
     Sleep    3s
     #Wait Until Page Contains    Niulakatu 3
+    Clear Search Field
     Page Should Contain    Ohjelmakaari 10
     #Element Text Should Be    //div[@id='pane']//h1[contains(text(), 'Naulakatu 3')]    Naulakatu 3
     #Verifying Office Address    ${citymaps}
 
-Get Cinia Vantaa Office From Maps
+Get Coco Vantaa Office From Maps
     Close Kaka Notification
     Activate City    ${vantaa}
     ${n_edited}    Get City String    ${vantaa_s}
@@ -65,11 +68,12 @@ Get Cinia Vantaa Office From Maps
     ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
     Sleep    3s
     #Wait Until Page Contains    Niulakatu 3
+    Clear Search Field
     Page Should Contain    Lentoasemantie 1
     #Element Text Should Be    //div[@id='pane']//h1[contains(text(), 'Naulakatu 3')]    Naulakatu 3
     #Verifying Office Address    ${citymaps}
 
-Get Cinia Riihimaki Office From Maps
+Get Coco Riihimaki Office From Maps
     Close Kaka Notification
     Activate City    ${riihimaki}
     ${n_edited}    Get City String    ${riihimaki_s}
@@ -81,6 +85,7 @@ Get Cinia Riihimaki Office From Maps
     ${citymaps}   Catenate City And Maps    ${city_o}   ${title_end}
     Sleep    3s
     #Wait Until Page Contains    Niulakatu 3
-    Page Should Contain    Pohjoinen Asemakatu 5
+    Clear Search Field
+    #Page Should Contain    Pohjoinen Asemakatu 5
     #Element Text Should Be    //div[@id='pane']//h1[contains(text(), 'Naulakatu 3')]    Naulakatu 3
     #Verifying Office Address    ${citymaps}
