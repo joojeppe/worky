@@ -57,7 +57,7 @@ Open Cinia web page and verify view
   Maximize Browser Window
   Title Should Be    Etusivu - Cinia
   Element Should Be Visible    //div[@class='col-2 float-left']//a//img
-  
+
 Get Cinia Helsinki Office From Maps
   Close Kaka Notification
   Activate City
