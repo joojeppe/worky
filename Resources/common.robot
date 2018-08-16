@@ -1,7 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 Library  String
-Library  BuildIn
+
 
 *** Variables ***
 ${url}    http://www.cinia.fi
